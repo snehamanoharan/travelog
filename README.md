@@ -1,2 +1,2 @@
-# travelogue
+# travelog
 (Internship project -STEP)
