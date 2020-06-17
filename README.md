@@ -1,2 +1,2 @@
-# travelogue-internproject
-Internship project -STEP
+# travelogue
+(Internship project -STEP)
