@@ -1,3 +1,2 @@
-# travelogue-internproject
-Internship project -STEP
-by sneha 
+ travelog
+(Internship project -STEP)
