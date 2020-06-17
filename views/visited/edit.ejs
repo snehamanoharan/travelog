@@ -1,0 +1,56 @@
+<%- include("../partials/header")%>
+<div class="container">
+    <img src="C:\Users\pavee\Downloads\edit.jpg" alt="">
+</div>
+<div class="img-container">
+
+    <h4> <a href="/visited">Add place!</a> </h4>
+</div>
+<div class=" text-container d-flex flex-row justify-content-end">
+    <div style="width:30% ; margin:25px;">
+        <p>edit details about the place you want to visit!</p>
+        <form action="/visited/:id?_method=PUT" method="POST">
+            <div class="form-group">
+                <label for="city"> City</label>
+                <input class="form-control" type="text" name="city" value="city">
+            </div>
+            <div class="form-group">
+                <label for="photourl">Photo Url</label>
+                <input class="form-control" type="text" name="photourl" value="photourl">
+            </div>
+            <div class="form-group">
+                <label for="desc">Few words about this place</label>
+                <textarea class="form-control" type="text" name="description" value="desc"></textarea>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="visited">VISITED</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="bucketlist">BUCKET-LIST</label>
+            </div>
+
+            <div class="form-group">
+                <label for="date">When did you travel here?</label>
+                <input class="form-control" type="text" name="date" value="date">
+
+            </div>
+            <div class="form-group">
+                <button class="btn btn-sm btn-secondary btn-end">Add place</button>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-sm btn-secondary btn-end">cancel</button>
+            </div>
+        </form>
+        <form id="delete" action="/visited/:id?_method=DELETE" method="POST">
+            <input type="submit" class="btn btn-block btn-danger" value="Delete">
+        </form>
+
+    </div>
+
+
+</div>
+
+</div>
+<%- include("../partials/footer")%>

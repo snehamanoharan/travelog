@@ -1,0 +1,49 @@
+<%- include("../partials/header")%>
+<div class="container">
+    
+</div>
+    <div class="img-container">
+        <h4> <a href="/bucketlist">Add place!</a> </h4>
+    </div>
+    <div class=" text-container d-flex flex-row bd-highlight mb-3 justify-content-end">
+        <div style="width:30% ; margin:25px;">
+            <p>Add details about the place you have visited!!</p>
+            <form action="/visited" method="POST">
+                <div class="form-group">
+                    <label for="city"> City</label>
+                    <input class="form-control" type="text" name="city">
+                </div>
+                <div class="form-group">
+                    <label for="photourl">Photo Url</label>
+                    <input class="form-control" type="text" name="photourl">
+                </div>
+                <div class="form-group">
+                    <label for="desc">Few words about this place</label>
+                    <textarea class="form-control" type="text" name="description"></textarea>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="visited">VISITED</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="bucketlist">BUCKET-LIST</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">When did you travel here?</label>
+                    <input class="form-control" type="text" name="date">
+
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-sm btn-secondary btn-end">Add place</button>
+                </div>
+            </form>
+
+        </div>
+
+
+    </div>
+
+</div>
+<%- include("../partials/footer")%>
