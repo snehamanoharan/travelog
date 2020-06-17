@@ -1,36 +1,49 @@
 <%- include("../partials/header")%>
 
-<div class="main-container">
-
-</div>
-
-<div id="strip">
-    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-        <label class="btn btn-sm btn-light active">
-          <a class="visited" href="/visited">My Visited Places</a>
-
-        </label>
-        <label class="btn btn-sm btn-light">
-          <a class="bucketlist" href="/bucketlist">My Bucket-List</a>
-        </label>        
-      </div> 
-</div>
-
-<div class="container">
-    <h1>My Visited Places </h1>
-    <a class="addnew btn btn-sm"style="display-inline" href="/visited/new">add new</a>
-    <div class="row text-center" style="margin-top:2% ;display: flex; flex-wrap: wrap;">
-        <div class="col-md-3 col-sm-6">
-            <div class="card">
-                <img class="card-img-top"
-                    src="https://images.unsplash.com/photo-1535332371349-a5d229f49cb5?ixlib=rb-1.2.1&w=1000&q=80">
-                <div class="card-body">
-                    <h4 class="card-text ">heyy </h4>
-                </div>
+<div class="flex-wrap">
+    <div class=" container-fluid home">
+        <div class=" col">
+            <img src="home.illustration.svg">
+        </div>
+        <div class="col" style="color: white;">
+         <p>Sometimes, what matters is to pack your bags and get on a car and travel NON-STOP.</p>       
+           <h4> Explore! The World is Not Enough</h4>
+        </div>
+        
+    </div>
+    
+    
+    <div class="strip">
+        <div class="btn-group btn-group-toggle"  data-toggle="buttons">
+            <label class="btn btn-sm active">
+              <a class="visited" href="/visited">My Visited Places</a>
+    
+            </label>
+            <label class="btn btn-sm active ">
+              <a class="bucketlist" href="/bucketlist">My Bucket-List</a>
+            </label>        
+          </div> 
+    </div>
+    
+    <div class="container">
+        <h1>My Visited Places <a class="addnew btn btn-dark btn-sm" href="/visited/new">add new</a> </h1>
+        <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+            <%visited.forEach(function(visited){%>
+            <div class="col-md-3 col-sm-6">
+                <a href="/visited/<%=visited._id%>/edit">
+                    <div class="card">
+                        <img class="card-img-top" src="<%= visited.photourl %>">
+                        <div class="card-body">
+                            <h4 class="card-text "> <%= visited.city %> </h4>
+                            <h6 class="card-text "> <%= visited.date.toDateString() %> </h6>
+                        </div>                 
+                    </div>
+                </a>    
             </div>
+            <% }) %>
         </div>
     </div>
-
 </div>
+
 
     <%- include("../partials/footer")%>

@@ -4,21 +4,19 @@
 <head>
 
     <title>TRAVELOG</title>
-    <!-- CSS only -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet"  type="text/css" href="stylesheets/main.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
 
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <div class="navbar-head">
                 <a class="navbar-brand" href="#">
-                    <img src="C:\Users\pavee\Documents\assets\login-header.svg" width="30" height="30"
-                        class="d-inline-block align-top" alt="" loading="lazy">
+                    <img src="login-header.svg" width="30" height="30">
 
                 </a>
 
@@ -26,7 +24,7 @@
             <div class="collapse navbar-collapse  justify-content-end" id="navbarnav">
                 <ul class="navbar-nav text-right ">
                     <li>
-                        <a class="nav-link" href="#">Currently signed in as </a>
+                        <a class="nav-link" href="#">HI  <%=currentUser%></a>
                     </li>
                     <li class="nav-item ml=0">
                         <a class="nav-link" href="/logout"> Logout </a>

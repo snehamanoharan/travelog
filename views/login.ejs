@@ -3,116 +3,72 @@
 
 <head>
     <title>travelog</title>
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-     <link rel="stylesheet"  type="css/text"  href="/stylesheets/main.css">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
 </head>
+
 <body>
 
-    <div class="container">
-       <div class=row>
-        <div class="d-inline-flex p-2 bd-highlight">
-            <picture>
-                <source srcset="file:///C:/Users/pavee/Documents/assets/home-illustration.svg" type="image/svg+xml">
-                <img src="file:///C:/Users/pavee/Documents/assets/home-illustration.svg" class="img-fluid img-thumbnail" alt="...">
-              </picture>
-            
-        </div>
-       </div>
-       <div
-    </div>
-    <div class="container" style="padding:0 auto; justify-content: center;">
-    <div class="jumbotron" style="margin-top:3%;margin-bottom:0;">
+    <div class="container-body" >
+        <div class=row>
+            <div class="d-inline-flex p-2 bd-highlight">
+                <div class="container" style="padding:0 auto;">
+                    <div class="jumbotron" style="margin-top:3%;margin-bottom:0;">
+                           <img src="login-header.svg">
+                    </div>
+                    <div class="jumbotron" style=" padding-top:6px ; height:500px;">
+                        <div class="row" style="width:100% ; margin:0 auto;">
+                            <div class="col-md-6 login-form">
+                                <h3>Login</h3>
+                                <form action="/login" method="POST">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="username" required
+                                            placeholder="Username">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" type="password" name="password" required
+                                            placeholder="Password">
+                                    </div>
+                                    <button class="btn-block">login!!</button>
+                                </form>
+                            </div>
 
-    </div>
-        <div class="jumbotron"  style=" padding-top:6px ; height:500px;">
-            <div class="row" style="width:100% ; margin:0 auto;">
-                <div class="col-md-6 login-form">
-                    <h3>Login</h3>
-                    <form action="/login" method="POST">
-                          <div class="form-group">
-                             <input class="form-control" type="text" name="username" required placeholder="Username">
-                           </div>
-                           <div class="form-group">
-                              <input class="form-control" type="password" name="password" required placeholder="Password">
-                           </div>
-                           <button>login!!</button>
-                        </form>
-                </div>
-                
-                <div class="col-md-6 register-form" >
-                    <h3>Don't already have an account ?</h3>
-                    <h6>Register Up!</h6>                
-                    <form action="/register"method="POST">
-                        <div class="form-group">
-                            <input class="form-control" type="text" name="name" required placeholder="Your Name">
+                            <div class="col-md-6 register-form">
+                                <h3>Don't already have an account ?</h3>
+                                <h6>Register Up!</h6>
+                                <form action="/register" method="POST">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="name" required
+                                            placeholder="Your Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" type="email" name="email" required
+                                            placeholder="Email Id">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" type="tel" name="phoneno" required
+                                            placeholder="Phone NO">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="username" required
+                                            placeholder="Username">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" type="password" name="password" required
+                                            placeholder="Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn-block">Sign up!!</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <input class="form-control" type="email" name="email" required placeholder="Email Id">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" type="tel" name="phoneno" required placeholder="Phone NO">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" type="text" name="username" required placeholder="Username">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" type="password" name="password" required placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <button>Sign up!!</button>
-                        </div>
-                    </form>
+                    </div>
+
                 </div>
             </div>
         </div>
-
     </div>
-    
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
