@@ -9,66 +9,59 @@
 
 <body>
 
-    <div class="container-body" >
-        <div class=row>
-            <div class="d-inline-flex p-2 bd-highlight">
-                <div class="container" style="padding:0 auto;">
-                    <div class="jumbotron" style="margin-top:3%;margin-bottom:0;">
-                           <img src="login-header.svg">
-                    </div>
-                    <div class="jumbotron" style=" padding-top:6px ; height:500px;">
-                        <div class="row" style="width:100% ; margin:0 auto;">
-                            <div class="col-md-6 login-form">
-                                <h3>Login</h3>
-                                <form action="/login" method="POST">
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" name="username" required
-                                            placeholder="Username">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control" type="password" name="password" required
-                                            placeholder="Password">
-                                    </div>
-                                    <button class="btn-block">login!!</button>
-                                </form>
+    <div class="container-body">
+        <div class="main-container" id="login">
+            <div class="imgcontainer">
+                <img src="/images/login-header.svg" width="800">
+            </div>
+            <div class="textcontainer " >
+                <div class="row">
+                    <div class="col login-form">
+                        <h3>Login</h3>
+                        <form action="/login" method="POST">
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="username" required placeholder="Username">
                             </div>
-
-                            <div class="col-md-6 register-form">
-                                <h3>Don't already have an account ?</h3>
-                                <h6>Register Up!</h6>
-                                <form action="/register" method="POST">
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" name="name" required
-                                            placeholder="Your Name">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control" type="email" name="email" required
-                                            placeholder="Email Id">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control" type="tel" name="phoneno" required
-                                            placeholder="Phone NO">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" name="username" required
-                                            placeholder="Username">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control" type="password" name="password" required
-                                            placeholder="Password">
-                                    </div>
-                                    <div class="form-group">
-                                        <button class="btn-block">Sign up!!</button>
-                                    </div>
-                                </form>
+                            <div class="form-group">
+                                <input class="form-control" type="password" name="password" required
+                                    placeholder="Password">
                             </div>
-                        </div>
+                            <button class="btn-light btn-block">LOGIN</button>
+                        </form>
                     </div>
 
+                    <div class="col register-form">
+                        <p>If you don't already have an account ?
+                            Register to create one!</p>
+                        <form action="/register" method="POST">
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="name" required placeholder="Your Name">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="email" name="email" required placeholder="Email Id">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="tel" name="phoneno" required placeholder="Phone NO">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="username" required placeholder="Username">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="password" name="password" required
+                                    placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <button class="btn-light btn-block">REGISTER</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
+
+
 </body>
 
 </html>

@@ -36,7 +36,7 @@ passport.use(new localStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-//use
+//users
 app.use(flash());
 app.use(methodOverride("_method"));
 app.use(express.static(__dirname + "/public")); 
