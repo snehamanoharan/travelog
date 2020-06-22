@@ -51,7 +51,7 @@ app.use("/bucketlist",bucketlistRoutes);
 app.set("view engine","ejs");
 
 //port
-app.listen(3000,function(){
+app.listen(process.env.PORT, process.env.IP,function(){
      console.log("travelog has started in port 3000");
   });
      
