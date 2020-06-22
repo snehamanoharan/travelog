@@ -7,8 +7,8 @@ var bucketlistSchema =new mongoose.Schema({
     photourl:String,
     description:String,
     date:Date,
-    option1: { type: Boolean},
-    option2: { type: Boolean}
+    isVisited: Boolean,
+    isBucketlist: Boolean
     
 });
 

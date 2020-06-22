@@ -14,20 +14,22 @@ router.get("/",function(req,res){
 });
 
 //new
-router.get("/new",function(req,res){
+router.get("/new",isLoggedIn,function(req,res){
     res.render("./visited/new");
 });
 //newpost
-router.post("/",function(req,res){
+router.post("/",isLoggedIn,function(req,res){
     var city=req.body.city;
     var photourl=req.body.photourl;
     var desc=req.body.description;
     var date=req.body.date;
-    var visited={city:city ,photourl:photourl,description:desc, date:date};
+    var isVisited = req.body.isVisited;
+    var isBucket = req.body.isBucket;
+    var visited={city:city ,photourl:photourl,description:desc,isVisited: isVisited,
+        isBucket: isBucket, date:date};
     Visited.create(visited,function(err,visited){
        if(err){
          console.log("err");
-
        }else{
          res.redirect("/visited");
      }
@@ -51,7 +53,7 @@ router.put("/:id",function(req,res){
     });
 });
 //delete
-router.delete("/:id",function(req,res){
+router.delete("/:id",isLoggedIn,function(req,res){
     Visited.findByIdAndRemove(req.params.id, function(err){
         if(err){
             res.redirect("/visited");
@@ -60,5 +62,11 @@ router.delete("/:id",function(req,res){
         }
      });
 });
-
+//check
+function isLoggedIn(req, res, next){	
+	if(req.isAuthenticated()){
+		return next();
+	}
+	res.redirect("/");
+}
 module.exports=router;

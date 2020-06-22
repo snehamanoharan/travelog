@@ -38,8 +38,7 @@
             <div class="error-message hide"></div>
             <div id="edit-btn" style="display: flex; justify-content: flex-end">
                 <a href="/visited" class="cancel-anchor btn-sm  btn-light">Cancel</a>
-                <button type="button" onclick="validateFields()" id="submitButton"
-                    class="addButton btn-sm btn-dark">UPDATE PLACE</button>
+                <button class="addButton btn-sm btn-dark">UPDATE PLACE</button>
             </div>
    
         </form>
@@ -58,30 +57,4 @@
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
 
-<script>
-
-    function validateFields() {
-        var emptyField = false,
-            errorText = "";
-        console.log(fields);
-        var form = $("#editForm"),
-            fields = $("#editForm .form-req"),
-            errorMessage = $("#editForm .error-message");
-        for (let i = 0; i < fields.length; i++) {
-            if (fields[i].value === "") {
-                emptyField = true;
-                errorText = "All Fields are Required";
-                break;
-            }
-        }
-        if (emptyField) {
-            errorMessage.text(errorText);
-            errorMessage.removeClass("hide");
-        } else {
-            errorMessage.addClass("hide");
-            form.submit();
-        }
-
-    }
-</script>
 <%- include("../partials/footer")%>

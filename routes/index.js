@@ -6,7 +6,7 @@ var User     =require("../models/users");
 
 
 //main page
-router.get("/",function(req,res){
+router.get("/",isLoggedIn,function(req,res){
     res.render("login");
 });
 //show register form
@@ -50,6 +50,12 @@ router.get("/logout",function(req,res){
 });
 
  //checker  
+ function isLoggedIn(req, res, next){	
+	if(req.isAuthenticated()){
+		return next();
+	}
+	res.redirect("/login");
+}
  function validateFields(){
     var form = document.getElementById("login-form"),
         fields = document.getElementsByClassName("form-group"),

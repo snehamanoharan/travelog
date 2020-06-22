@@ -1,6 +1,6 @@
 <%- include("../partials/header")%>
 <div class="new-container" id="new-main">
-    <span class="arrow"><h5><a href="/bucketlist"><img src="/images/arrow.svg" width="14"height="21"></a>Add place</h5></span>
+    <span class="arrow"><h2><a href="/bucketlist"><img src="/images/arrow.svg" width="14"height="21"></a>Add place</h2></span>
     <div class="new-form-container" id="imgnew">
         <img src="/images/travel-illustration.svg" width="653" height="598">
     </div>
@@ -21,12 +21,12 @@
                     name="description"></textarea>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input"  id="inlineCheckbox1" type="checkbox" name="option1" >
-                <label class="form-check-label" for="visited">VISITED</label>
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" onClick="displayDate()" name="isVisited" value="true">
+                <label class="form-check-label bolder" for="inlineCheckbox1">VISITED</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" id="inlineCheckbox2" type="checkbox" name="option2" >
-                <label class="form-check-label" for="bucketlist">BUCKET-LIST</label>
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="isBucket" value="true">
+                <label class="form-check-label bolder" for="inlineCheckbox2">BUCKET-LIST</label>
             </div>
             <div class="form-group"  id="datediv">
                 <label for="date">When do you want to travel here?</label>
