@@ -19,7 +19,7 @@
 
 //mongoose
 var Mongoose  = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/travelog",{useNewUrlParser:true,useUnifiedTopology:true,useFindAndModify:false});
+mongoose.connect("mongodb+srv://sneha:<password>@travelog-c37ry.mongodb.net/<dbname>?retryWrites=true&w=majority",{useNewUrlParser:true,useUnifiedTopology:true,useFindAndModify:false});
 
 //passport
 
