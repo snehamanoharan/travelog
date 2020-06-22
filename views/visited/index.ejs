@@ -1,0 +1,44 @@
+<%- include("../partials/header")%>
+
+
+    <div class=" container-fluid home">
+        <div class="row"id="homerow">
+                <img src="/images/home-illustration.svg" width="800" height="200" >
+            <div class="col" id="text-home">
+               <h6>Sometimes, what matters is to pack your bags and get on a car and travel NON-STOP.</h6>       
+               <h3> Explore! The World is Not Enough</h3>
+            </div>    
+        </div>      
+    </div>
+    
+    <div class="strip">
+        <div class="btn-group btn-group-toggle" >
+            <label class="btn btn-sm ">
+              <a class="visited"  href="/visited">MY VISITED PLACES</a>
+            </label>
+            <label class="btn btn-sm active ">
+              <a class="bucketlist"  href="/bucketlist">MY BUCKETLIST</a>
+            </label>        
+          </div> 
+    </div>
+     
+    <div class="places-main-container">
+            <h1 class="new">My Visited Places <a class="addnew  btn-dark btn-lg" href="/visited/new">ADD PLACE</a></h1>      
+              <div class="card-deck" style="margin-top: 35px;text-align: center;">
+              <%visited.forEach(function(visited){%>
+                <a href="/visited/<%=visited._id%>/edit">
+                    <div class="card">
+                        <img class="card-img-top" src="<%=visited.photourl%>">
+                        <div class="card-body">
+                            <h4 class="card-text "> <%=visited.city%> </h4>
+                            <h6 class="card-text "> <%=visited.date%> </h6>
+                        </div>                 
+                    </div>
+                </a>    
+            <% }) %>
+        </div>
+    </div>
+
+
+
+    <%- include("../partials/footer")%>

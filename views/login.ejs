@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>travelog</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/login.css">
+</head>
+
+<body>
+
+    <div class="main-container" id="login">
+        <div class="imgcontainer">
+            <img src="/images/login-header.svg" width="800">
+        </div>
+        <div class="textcontainer">
+            <div class="login-form-section login-form">
+                <div class="form-container login">
+                    <h3>Login</h3>
+                    <form action="/login" id="loginForm" method="POST">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="username" required placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="password" name="password" required placeholder="Password">
+                        </div>
+                        <div class="error-message hide">All fields are required</div>
+                        <button class="addButton login-button btn-block" type="button" onclick="validateFields('login')">LOG IN</button>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="login-form-section register-form">
+                <div class="form-container">
+                    <p>If you don't already have an account ? Register to create one!</p>
+                    <form action="/register"  id="registerForm"   method="POST">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="name" required placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="email" name="email" required placeholder="Email Id">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="tel" name="phoneno" required placeholder="Phone NO">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="username" required placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="password" name="password" required placeholder="Password">
+                        </div>
+                        <div class="error-message hide">All fields are required</div>
+                        <button class="addButton register-button btn-block" type="button" onclick="validateFields('register')">REGISTER</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+         
+        <script>
+            function validateFields(type){
+                    var emptyField = false,
+                        errorText = "";
+                    console.log(fields);
+                    if(type === 'login'){
+                      var  form = $("#loginForm"),
+                        fields = $("#loginForm .form-control"),
+                        errorMessage = $("#loginForm .error-message");
+                    } else{
+                        var  form = $("#registerForm"),
+                        fields = $("#registerForm .form-control"),
+                        errorMessage = $("#registerForm .error-message");
+                    }
+                    for(let i=0; i<fields.length ;i++){
+                        if(fields[i].value === ""){
+                        emptyField = true;
+                        errorText = "All Fields are Required";
+                        break;
+                        }
+                    }
+                    if(emptyField){
+                        errorMessage.text(errorText);
+                        errorMessage.removeClass("hide");
+                    }else{
+                        errorMessage.addClass("hide");
+                        form.submit();
+                    }
+                    
+                    }   
+        </script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<%- include("../partials/header")%>
+
+<div class="edit-container" id="edit-main">
+    <span class="arrow"><h5><a href="/visited"><img src="/images/arrow.svg" width="14"height="21"></a>Edit place details!</h5></span>
+    <div class="edit-form-container" id="imgedit">
+        <img src="/images/travel-illustration.svg" width="653" height="598">
+    </div>
+    <div class="edit-form-container" id="editform">
+        <h4>Edit details about the place where you have visited!</h4>
+        <form action="/visited/<%= visited._id %>?_method=PUT" method="POST">
+            <div style="margin-top: 2px;"class="form-group">
+                <label for="city"> City</label>
+                <input class="form-control form-req" type="text" name="visited[city]" value="<%=visited.city%>">
+            </div>
+            <div class="form-group">
+                <label for="photourl">Photo Url</label>
+                <input class="form-control form-req" type="text" name="visited[photourl]" value="<%=visited.photourl%>">
+            </div>
+            <div class="form-group">
+                <label for="desc">Few words about this place</label>
+                <textarea class="form-control" type="text"
+                    name="visited[description]"><%= visited.description %></textarea>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="<%=visited.option1%>">
+                <label class="form-check-label" for="visited">VISITED</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="<%=visited.option1%>">
+                <label class="form-check-label" for="bucketlist">BUCKET-LIST</label>
+            </div>
+
+            <div class="form-group">
+                <label for="date">When did you travel here?</label>
+                <input class="form-control form-req" type="text" name="visited[date]" value="<%=visited.date%>">
+
+            </div>
+            <div class="error-message hide"></div>
+            <div id="edit-btn" style="display: flex; justify-content: flex-end">
+                <a href="/visited" class="cancel-anchor btn-sm  btn-light">Cancel</a>
+                <button type="button" onclick="validateFields()" id="submitButton"
+                    class="addButton btn-sm btn-dark">UPDATE PLACE</button>
+            </div>
+   
+        </form>
+        <form id="delete" action="/visited/<%=visited._id %>?_method=DELETE" method="POST">
+            <input type="submit" class=" btn-outline-light" value="Delete this place">
+        </form>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+<script>
+
+    function validateFields() {
+        var emptyField = false,
+            errorText = "";
+        console.log(fields);
+        var form = $("#editForm"),
+            fields = $("#editForm .form-req"),
+            errorMessage = $("#editForm .error-message");
+        for (let i = 0; i < fields.length; i++) {
+            if (fields[i].value === "") {
+                emptyField = true;
+                errorText = "All Fields are Required";
+                break;
+            }
+        }
+        if (emptyField) {
+            errorMessage.text(errorText);
+            errorMessage.removeClass("hide");
+        } else {
+            errorMessage.addClass("hide");
+            form.submit();
+        }
+
+    }
+</script>
+<%- include("../partials/footer")%>

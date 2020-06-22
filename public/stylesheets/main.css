@@ -1,0 +1,40 @@
+
+*{
+    box-sizing: border-box;
+}
+.home{
+    background-color:rgb(14, 19, 49);
+}
+.strip{
+    margin-top: 0.5%;
+    background-color:rgb(36, 90, 153);
+}
+
+#text-home.col{
+    width: 600;
+    color: white;
+    text-align: left;
+    justify-content: center;
+    margin-top: 36px;
+}
+#navbarid.navbar {
+    background-color:rgb(14, 19, 49);
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.head1{
+    border-right: 1px solid white;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+.head2{
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+.error-message{
+    color: red;
+  }
+  .hide{
+    display: none
+  }
+
+ 
+ 
