@@ -1,0 +1,73 @@
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: rgb(238, 238, 238);
+    margin: 0 auto;
+}
+
+
+#edit-main.edit-container{
+    display: flex;
+
+}
+.edit-form-container{
+    font-family: 'IBM Plex Sans', sans-serif;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top:60px;
+    margin-bottom:60px;
+
+}
+
+#editform.edit-form-container{
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: white;
+    margin-left:50px;
+    margin-right: 150px;
+    padding: 60px;
+    
+}
+
+#imgedit.edit-form-container{
+    margin-left:0;
+    padding: 60px;
+    margin-right: 0;
+    
+}
+#new-btn{
+    text-align: end;
+}
+#edit-btn{
+    text-align: end;
+}
+.btn-light{
+    border: none;
+    
+}
+.btn-dark{
+    background-color:rgb(14, 19, 49);
+    display: inline; 
+    border: none;
+}
+.arrow{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    justify-content: center;
+    margin-top: 78px;
+    margin-left: 50px;
+}
+
+#delete{
+ border-top: 1px solid rgb(151, 151, 151);
+}
+.btn-outline-light{
+    background-color: white;
+    color:rgb(208, 2, 27);
+    text-align: left;
+    border: none;
+}
