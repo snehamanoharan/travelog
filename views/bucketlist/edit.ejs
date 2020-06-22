@@ -12,7 +12,7 @@
         <form action="/bucketlist/<%=bucketlist._id %>?_method=PUT" method="POST">
             <div class="form-group">
                 <label for="city"> City</label>
-                <input class="form-control form-req" type="text" name="visited[city]" value="<%=bucketlist.city %>">
+                <input class="form-control form-req" type="text" name="bucketlist[city]" value="<%=bucketlist.city %>">
             </div>
             <div class="form-group">
                 <label for="photourl">Photo Url</label>
@@ -23,27 +23,20 @@
                 <textarea class="form-control form-req" type="text"
                     name="bucketlist[description]"><%=bucketlist.description %></textarea>
             </div>
+            
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" name="visited[option1]" onClick="displayDate()"
-                    id="inlineCheckbox1" value="<%=bucketlist.option1%>">
-                <label class="form-check-label" for="visited">VISITED</label>
+                <input class="form-check-input" type="checkbox" id="isVisitedCheckbox  value= "visit" checked >
+                <label class="form-check-label bolder" for="isVisitedCheckbox">VISITED</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="visited[option2]"value="true">
-                <label class="form-check-label" for="bucketlist">BUCKET-LIST</label>
-            </div>
-            <div class="form-group" id="datediv">
-                <label for="date">When did you travel here?</label>
-                <input class="form-control form-req" type="text" name="bucketlist[date]" >
-
+                <input class="form-check-input" type="checkbox" id="isBucketCheckbox" name="bucketlist[isBucket]" >
+                <label class="form-check-label bolder" for="isBucketCheckbox">BUCKET-LIST</label>
             </div>
             <div class="error-message hide"></div>
             <div id="edit-btn" style="display: flex; justify-content: flex-end">
                 <a href="/bucketlist" class="cancel-anchor btn-sm  btn-light">Cancel</a>
-                <button type="button" onclick="validateFields()" id="submitButton"
-                    class="addButton btn-sm btn-dark">UPDATE PLACE</button>
+                <button class="addButton btn-sm btn-dark">UPDATE PLACE</button>
             </div>
-
         </form>
         <form id="delete" action="/bucketlist/<%=bucketlist._id %>?_method=DELETE" method="POST">
             <input type="submit" class=" btn-outline-light" value="Delete this place">
@@ -62,28 +55,5 @@
 
 <script>
 
-    function validateFields() {
-        var emptyField = false,
-            errorText = "";
-        console.log(fields);
-        var form = $("#editForm"),
-            fields = $("#editForm .form-req"),
-            errorMessage = $("#editForm .error-message");
-        for (let i = 0; i < fields.length; i++) {
-            if (fields[i].value === "") {
-                emptyField = true;
-                errorText = "All Fields are Required";
-                break;
-            }
-        }
-        if (emptyField) {
-            errorMessage.text(errorText);
-            errorMessage.removeClass("hide");
-        } else {
-            errorMessage.addClass("hide");
-            form.submit();
-        }
-
-    }
 </script>
 <% - include("../partials/footer") %>

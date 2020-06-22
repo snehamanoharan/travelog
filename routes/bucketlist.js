@@ -5,7 +5,7 @@ var Bucketlist =require("../models/bucketlist");
 
 
 //allvisited
-router.get("/",function(req,res){
+router.get("/",isLoggedIn,function(req,res){
     Bucketlist.find({}, function(err, allbucketlist){
         if(err){
             console.log(err);
@@ -15,17 +15,20 @@ router.get("/",function(req,res){
      });
 });
 //new
-router.get("/new",function(req,res){
+router.get("/new",isLoggedIn,function(req,res){
     res.render("./bucketlist/new");
 });
 
 //newpost
-router.post("/",function(req,res){
+router.post("/",isLoggedIn,function(req,res){
     var city=req.body.city;
     var photourl=req.body.photourl;
     var description=req.body.description;
     var date=req.body.date;
-    var visited={city:city,photourl:photourl,description:description,date:date};
+    var isVisited = req.body.isVisited;
+    var isBucket = req.body.isBucket;
+    var visited={city:city,photourl:photourl,description:description,isVisited: isVisited,
+        isBucket: isBucket,date:date};
     Bucketlist.create(visited,function(err,bucketlist){
        if(err){
          console.log("err");
@@ -36,7 +39,7 @@ router.post("/",function(req,res){
     });
 });
 //edit
-router.get("/:id/edit",function(req,res){
+router.get("/:id/edit",isLoggedIn,function(req,res){
     Bucketlist.findById(req.params.id,function(err,foundbucketlist){
         res.render("bucketlist/edit", {bucketlist:foundbucketlist});
     });
@@ -53,7 +56,7 @@ router.put("/:id",function(req,res){
     });
    });
    //delete
- router.delete("/:id",function(req,res){
+ router.delete("/:id",isLoggedIn,function(req,res){
     Bucketlist.findByIdAndRemove(req.params.id, function(err){
         if(err){
             res.redirect("/bucketlist");
@@ -62,6 +65,12 @@ router.put("/:id",function(req,res){
         }
      });
  });
-
+//check
+function isLoggedIn(req, res, next){	
+	if(req.isAuthenticated()){
+		return next();
+	}
+	res.redirect("/");
+}
  
 module.exports=router;
