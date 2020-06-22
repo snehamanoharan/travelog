@@ -1,6 +1,6 @@
 
-.container-body{
-    background-color:rgb(14, 19, 49);   
+*{
+    box-sizing: border-box;
 }
 .home{
     background-color:rgb(14, 19, 49);
@@ -9,66 +9,32 @@
     margin-top: 0.5%;
     background-color:rgb(36, 90, 153);
 }
-#homerow{
 
-    padding-left:10%;
-}
 #text-home.col{
     width: 600;
     color: white;
     text-align: left;
     justify-content: center;
+    margin-top: 36px;
 }
 #navbarid.navbar {
     background-color:rgb(14, 19, 49);
-
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 
+.head1{
+    border-right: 1px solid white;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+.head2{
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+.error-message{
+    color: red;
+  }
+  .hide{
+    display: none
+  }
 
-.login-form.col{
-    border-right: 1px solid black;
-    margin-top: 2%;
-    margin-bottom:1%;
-}
-
-.imgcontainer{
-    height: 200;
-}
-
-#login.main-container{
-    size: 10rem;
-    margin: 0 auto;
-    width: 800px;
-    height: 250;
-    justify-content: center;
-    float:center ;
-    padding-bottom: 70px;
-    padding-top: 70px;
-   }
-.textcontainer{
-    height:350;
-    background-color: white;
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-}
-.btn-light{
-    background-color:rgb(14, 19, 49); 
-    color: white;
-}
-
-.editcontainer{
-    background-color: rgb(238, 238, 238);
-    margin: 0 auto;
-}
-#imgedit.col{
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-}
-#editcol.col{
-    width:500 ;
-    height:763 ;
-}
+ 
+ 

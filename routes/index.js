@@ -48,14 +48,35 @@ router.get("/logout",function(req,res){
     res.redirect("/login");
 
 });
-//middleware
-function isLoggedIn(req,res,next){
-    if(req.isAuthenticated()){
-        return next();
+
+ //checker  
+ function validateFields(){
+    var form = document.getElementById("login-form"),
+        fields = document.getElementsByClassName("form-group"),
+        errorMessage = document.getElementsByClassName("error-message")[0],
+        emptyField = false;
+    console.log(fields);
+    for(let i=0; i<fields.length ;i++){
+      if(fields[i].value === ""){
+        emptyField = true;
+        break;
+      }
     }
-    req.flash("error","You need to be logged in to do that!");
-    res.redirect("/login");
-}
+    if(emptyField){
+      errorMessage.classList.remove("hide");
+    }else{
+      errorMessage.classList.add("hide");
+      form.submit();
+    }
+    
+  }
+
+
+
+
+
+
+
 
 
 module.exports=router;

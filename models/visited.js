@@ -7,7 +7,10 @@ var visitedschema =new mongoose.Schema({
     city:String,
     photourl:String,
     description:String,
-    date:Date
+    date:Date,
+    option1: { type: Boolean},
+    option2: { type: Boolean}
+    
 });
 
 module.exports=mongoose.model("Visited",visitedschema);

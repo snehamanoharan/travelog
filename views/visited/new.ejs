@@ -1,48 +1,85 @@
 <%- include("../partials/header")%>
-<div class="container">
 
-    <div class="img-container col">
-        <h4> <a href="/bucketlist">Add place!</a> </h4>
+<div class="new-container" id="new-main">
+    <span class="arrow">
+        <h5><a href="/visited"><img src="/images/arrow.svg" width="14" height="21"></a>Add place</h5>
+    </span>
+    <div class="new-form-container" id="imgnew">
+        <img src="/images/travel-illustration.svg" width="653" height="598">
     </div>
-    <div class=" text-container d-flex flex-col bd-highlight mb-3 justify-content-end">
-        <div style="width:30% ; margin:25px;">
-            <p>Add details about the place you have visited!!</p>
-            <form action="/visited" method="POST">
-                <div class="form-group">
-                    <label for="city"> City</label>
-                    <input class="form-control" type="text" name="city">
-                </div>
-                <div class="form-group">
-                    <label for="photourl">Photo Url</label>
-                    <input class="form-control" type="text" name="photourl">
-                </div>
-                <div class="form-group">
-                    <label for="desc">Few words about this place</label>
-                    <textarea class="form-control" type="text" name="description"></textarea>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                    <label class="form-check-label" for="visited">VISITED</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="bucketlist">BUCKET-LIST</label>
-                </div>
-
-                <div class="form-group">
-                    <label for="date">When did you travel here?</label>
-                    <input class="form-control" type="text" name="date">
-
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-sm btn-secondary btn-end">Add place</button>
-                </div>
-            </form>
-
-        </div>
-
-
+    <div class="new-form-container" id="newform">
+        <h4>Add details about the place where you have visited!</h4>
+        <form action="/visited" id="addForm" method="POST">
+            <div class="form-group">
+                <label for="city"> City</label>
+                <input class="form-control form-req" type="text"  name="city">
+            </div>
+            <div class="form-group">
+                <label for="photourl">Photo Url</label>
+                <input class="form-control form-req" type="text"  name="photourl">
+            </div>
+            <div class="form-group">
+                <label for="desc">Few words about this place</label>
+                <textarea class="form-control form-req" type="text"  name="description"></textarea>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="option1">
+                <label class="form-check-label" for="visited">VISITED</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="option1">
+                <label class="form-check-label" for="bucketlist">BUCKET-LIST</label>
+            </div>
+            <div class="form-group" id="datediv">
+                <label for="date">When did you travel here?</label>
+                <input class="form-control form-req" type="text"  name="date">
+            </div>
+            <div class="error-message hide">All fields are required</div>
+            <div style="display: flex; justify-content: flex-end">
+                <button type="button" id="new-btn" onclick="validateFields()" class="addButton btn-sm btn-dark">ADD PLACE</button>
+        </form>
     </div>
-
 </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<script>
+    function displayDate() {
+
+  var checkBox = document.getElementById("inlineCheckbox1");
+  var date = document.getElementById("datediv");
+
+  if (checkBox.checked == true){
+    date.style.display = "block";
+  } else {
+    date.style.display = "none";
+  }
+}
+
+    function validateFields() {
+        var emptyField = false,
+            errorText = "";
+            console.log(fields);
+         var form = $("#addForm"),
+             fields = $("#addForm .form-req"),
+             errorMessage = $("#addForm .error-message");
+             for(let i=0; i<fields.length ;i++){
+                        if(fields[i].value === ""){
+                        emptyField = true;
+                        errorText = "All Fields are Required";
+                        break;
+                        }
+                    }
+                    if(emptyField){
+                        errorMessage.text(errorText);
+                        errorMessage.removeClass("hide");
+                    }else{
+                        errorMessage.addClass("hide");
+                        form.submit();
+                    }
+
+    }
+</script
 <%- include("../partials/footer")%>
