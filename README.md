@@ -1,2 +1,0 @@
-# travelog
-(Internship project -STEP)
